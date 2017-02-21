@@ -511,7 +511,7 @@ public class TimePicker extends View implements ThemeManager.OnThemeChangedListe
             mCenterPoint = new PointF();
 
         mOuterRadius = size / 2f;
-        mCenterPoint.set(left + mOuterRadius, top + mOuterRadius);
+        mCenterPoint.set(left + (w - getPaddingLeft() - getPaddingRight())/2f, top + (h - getPaddingTop() - getPaddingBottom())/2f);
         mInnerRadius = mOuterRadius - mSelectionRadius - ThemeUtil.dpToPx(getContext(), 4);
 
         calculateTextLocation();
